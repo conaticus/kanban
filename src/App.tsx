@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from "./components/Container";
+import EditCardModal from "./components/Modal/EditModal";
+
+const containers: IContainer[] = [
+    {
+        title: "Todo",
+        cards: [
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+        ],
+    },
+    {
+        title: "In Progress",
+        cards: [
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+            { title: "Poop", description: "poop" },
+        ],
+    },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="containers-container">
+            {containers.map((container) => (
+                <Container container={container} />
+            ))}
+        </div>
+    );
 }
 
 export default App;
